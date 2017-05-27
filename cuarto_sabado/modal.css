@@ -1,0 +1,185 @@
+main{
+	height: 100vh;
+	width: 100%;
+}
+main section{
+	height: 400px;
+	width: 100%;
+}
+main section:first-child{
+	background-image: url('https://coubsecure-s.akamaihd.net/get/b82/p/coub/simple/cw_timeline_pic/44b0724c689/e68cb17795b291d387f80/med_1488060533_image.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+main section:nth-child(2){
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/93/cf/98/93cf987ad473b0cb486895a013140adb.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+body{
+	position: relative;
+}
+.overlay{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, .6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .3s;
+}
+.overlay .cerrar{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+.overlay.activated{
+	visibility: visible;
+	opacity: 1;
+}
+.overlay .modal-container{
+	height: 60vh;
+	width: 40%;
+	display: flex;
+	border-radius: 5px;
+	position: relative;
+}
+.modal-container i:first-child{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.group {
+    position: relative;
+    margin-bottom: 15%;
+}
+input{
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #E91E63;
+}
+
+input:focus{
+    outline: none;
+}
+
+label{
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: all .2s ease;
+}
+
+input:focus ~ label, input:valid ~ label{
+    top: -18px;
+    font-size: 12px;
+    color: #E91E63;
+}
+
+.bar{
+    position: absolute;
+    display: block;
+    width: 100%;
+}
+
+.bar:after, .bar:before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 1px;
+    position: absolute;
+    background: #E91E63;
+    transition: .2s all;
+}
+
+.bar:before{
+    left: 50%;
+}
+.bar:after{
+    right: 50%;
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after{
+    width: 50%;
+}
+
+.luz{
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+input:focus ~ span.luz{
+    animation: laigt .3s;
+}
+
+@keyframes laigt {
+    from{
+        background: #E91E63;
+    }
+    to{
+        width: 0%;
+        background: transparent;
+    }
+}
+form{
+    width: 100%;
+	background-color: white;
+    margin: 1% auto 0 auto;
+    display: block; 
+    padding: 15% 5%;
+    box-shadow: 0px 5px 5px #888888;
+	border-radius: 5px;
+}
+
+form button{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    border-radius: 5px;
+    border: none;
+    height: 7vh;
+    width: 50%;
+    border: 1px solid #E91E63;
+    background-color: transparent;
+    overflow: hidden;
+}
+form button span{
+    display: block;
+    width: 100%;
+    height: 7vh;
+    text-align: center;
+    position: absolute;
+    transition: all .3s;
+
+}
+form button span.bottom{
+    top:7vh;
+}
+form button span.top{
+    top: 0;
+}
+
+form button:hover span.bottom{
+    top: 0;
+}
+form button:hover span.top{
+    top: -7vh;
+}

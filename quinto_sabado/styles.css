@@ -1,0 +1,51 @@
+.navbar-default{
+    background-color: #3E64B2;
+    border: none;
+}
+.navbar-default .navbar-brand{
+    color: white;
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: white;
+}
+.navbar-default .navbar-nav>li>a{
+    color: white;
+}
+section .row article{
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, .5);
+}
+section.container div.row article img{
+    max-height: 150px;
+    margin: 0 auto;
+}
+@media (max-width: 767px){
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: white;
+    }
+}
+
+section.card div.img-container{
+    border: 1px solid blue;
+    position: relative;
+    width: 30%;
+    height: 200px;
+    overflow: hidden;
+
+}
+section.card div.img-container img{
+    position: absolute;
+    transition: all .4s;
+}
+section.card div.img-container img:first-child{
+    right: 0%;
+}
+section.card div.img-container img:nth-child(2){
+    right: -100%;
+}
+section.card div.img-container:hover > img:first-child {
+    right: 100%;
+}
+section.card div.img-container:hover > img:nth-child(2){
+    right: 0%;
+}

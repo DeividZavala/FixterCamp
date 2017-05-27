@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+}
+body{
+    position: relative;
+    height: 100vh;
+}
+header nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
+header nav ul li{
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+}
+header nav ul .image{
+    width: 6vw;
+}
+header nav ul .image img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+}
+header nav ul .bell{
+    height: 5vw;
+    width: 5vw;
+    background: black;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+main div div.google-logo{
+    height: 200px;
+    width: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('https://www.google.com.mx/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
+    position: relative;
+}
+main div{
+    width: 70%;
+    margin: 0 auto;
+}
+main div div.google-logo div{
+    color: #4285f4;
+    position: absolute;
+    bottom: 0;
+    font: 30px roboto-regular, arial, sans-serif;
+    left: 80%;
+}
+main div div.input{
+    width: 60%;
+    border: 1px solid #E8E6DA;
+    height: 6vh;
+    border-radius: 3px;
+    margin: 5% auto;
+    box-shadow: 0.1vh 0.1vh #c7c7c7;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1%;
+    box-sizing: border-box;
+}
+main div div.input input{
+    width: 80%;
+    border: none;
+    font-size: 18px;
+}
+main div div.input input:focus{
+    outline: none;
+}
+main div div.buttons{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+main div div.buttons button{
+    width: 45%;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    padding: 2% 2%;
+}
+
+footer{
+    background: red;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    align-items: center;
+}
+footer div{
+    width: 25%;
+    background: black;
+    height: 30px;
+    border: 1px solid white;
+}
