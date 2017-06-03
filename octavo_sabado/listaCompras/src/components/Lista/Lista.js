@@ -1,5 +1,6 @@
 import React from 'react';
 import ListItem from './ListItem';
+import ListForm from './ListForm';
 
 class Lista extends React.Component{
 
@@ -26,6 +27,14 @@ class Lista extends React.Component{
         }
     }
 
+    addItem = (item) =>{
+        const new_list = this.state.items;
+        new_list.push(item);
+        this.setState({
+            items: new_list
+        })
+    }
+
     remove = (item) => {
         const new_list = this.state.items.filter(i => i !== item);
         console.log(new_list);
@@ -42,6 +51,10 @@ class Lista extends React.Component{
                 remove={this.remove}
                 />
                 )}
+                <ListForm 
+                count={this.state.items.length} 
+                addItem={this.addItem}
+                />
             </div> 
         );
     }
