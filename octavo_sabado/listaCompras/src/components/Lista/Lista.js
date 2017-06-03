@@ -1,6 +1,7 @@
 import React from 'react';
 import ListItem from './ListItem';
 import ListForm from './ListForm';
+import firebase from '../../firebase/firebase';
 
 class Lista extends React.Component{
 
@@ -27,12 +28,31 @@ class Lista extends React.Component{
         }
     }
 
-    addItem = (item) =>{
-        const new_list = this.state.items;
-        new_list.push(item);
-        this.setState({
-            items: new_list
+    componentWillMount(){
+        firebase.database().ref('fixtercamp').on('value', (val) =>{
+            let items = [];
+            val.forEach( item=> {
+                items.push(item.val());      
+            })
+            this.setState({
+                items: items
+            })
         })
+    }
+
+    addItem = (item) =>{
+        
+        let newPostKey = firebase.database().ref('fixtercamp').push().key;
+        item.fire_key = newPostKey;
+
+        let updates = {};
+        updates['/fixtercamp/'+newPostKey] = item;
+        firebase.database().ref().update(updates);
+        console.log("pusheado a firebase", item);
+
+        /*this.setState({
+            items: new_list
+        })*/
     }
 
     remove = (item) => {
