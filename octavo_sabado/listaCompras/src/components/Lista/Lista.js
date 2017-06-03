@@ -1,4 +1,5 @@
 import React from 'react';
+import ListItem from './ListItem';
 
 class Lista extends React.Component{
 
@@ -25,11 +26,22 @@ class Lista extends React.Component{
         }
     }
 
+    remove = (item) => {
+        const new_list = this.state.items.filter(i => i !== item);
+        console.log(new_list);
+        this.setState({items: new_list});
+    }
+
     render(){
         return(
             <div>
                 <p>Lista de compras</p>
-
+                { this.state.items.map(item => <ListItem
+                item={item} 
+                key={item.id}
+                remove={this.remove}
+                />
+                )}
             </div> 
         );
     }
