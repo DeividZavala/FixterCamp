@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, CardHeader, CardTitle, CardMedia, CardText, CardActions, FlatButton} from 'material-ui';
+import { Link } from 'react-router-dom';
 
 const CardItem = (props) => {
     return(
@@ -18,8 +19,7 @@ const CardItem = (props) => {
             {props.perro.overview}
             </CardText>
             <CardActions>
-                <FlatButton label="Action1" />
-                <FlatButton label="Action2" />
+                <FlatButton label="Detalle" containerElement={<Link to={"/movie/"+props.perro.id}></Link>} />
             </CardActions>
         </Card>
     );
