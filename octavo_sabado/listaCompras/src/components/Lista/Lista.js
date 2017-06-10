@@ -56,9 +56,13 @@ class Lista extends React.Component{
     }
 
     remove = (item) => {
-        const new_list = this.state.items.filter(i => i !== item);
+        /*const new_list = this.state.items.filter(i => i !== item);
         console.log(new_list);
-        this.setState({items: new_list});
+        this.setState({items: new_list});*/
+        let updates = {};
+        updates['/fixtercamp/'+item.fire_key] = null;
+        console.log(updates);
+        firebase.database().ref().update(updates);
     }
 
     render(){
