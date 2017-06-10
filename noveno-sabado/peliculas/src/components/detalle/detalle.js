@@ -1,4 +1,6 @@
 import React from 'react';
+import { FlatButton } from 'material-ui';
+import {Link} from 'react-router-dom';
 
 class Detail extends React.Component{
 
@@ -29,7 +31,10 @@ class Detail extends React.Component{
 
     render(){
         return(
-            <div>Detalle de la peli {this.state.peli.title} con el id -- {this.props.match.params.id}</div>
+            <section>
+                <div>Detalle de la peli {this.state.peli.title} con el id -- {this.props.match.params.id}</div>
+            <FlatButton label="Home" containerElement={<Link to="/"></Link>} />
+            </section>
         );
     }
 }
