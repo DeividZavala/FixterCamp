@@ -7,19 +7,15 @@ const CardItem = (props) => {
             <CardHeader
             title="URL Avatar"
             subtitle="Subtitle"
-            avatar="https://cdn.tutsplus.com/cg/uploads/2014/01/Blender_LP_Illustration_Preview.jpg"
+            avatar={"https://image.tmdb.org/t/p/w500"+props.perro.backdrop_path}
             />
             <CardMedia
-            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
+            overlay={<CardTitle title={props.perro.title} subtitle={props.perro.original_title} />}
             >
-            <img src="https://cdn.tutsplus.com/cg/uploads/2014/01/Blender_LP_Illustration_Preview.jpg" alt="" />
+            <img src={"https://image.tmdb.org/t/p/w500"+props.perro.poster_path} alt="" />
             </CardMedia>
-            <CardTitle title="Card title" subtitle="Card subtitle" />
             <CardText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            {props.perro.overview}
             </CardText>
             <CardActions>
                 <FlatButton label="Action1" />

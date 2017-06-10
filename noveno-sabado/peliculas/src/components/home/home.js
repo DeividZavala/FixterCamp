@@ -53,7 +53,7 @@ class Home extends React.Component{
                     cellHeight={900}
                     style={styles.gridList}>
 
-                    {this.state.items.map((peli)=> <CardItem key={peli.id}/>)}
+                    {this.state.items.map((peli)=> <CardItem perro={peli} key={peli.id}/>)}
 
                     </GridList>
                 </div>
