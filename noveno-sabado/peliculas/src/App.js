@@ -15,8 +15,9 @@ class App extends Component {
       <MuiThemeProvider>
         <div className="App">
           <AppBar 
-          title="Mis pelis prro"
+          title="Mis pelis paaaaapuuuuuudddd"
           iconClassNameRight="muidocs-icon-navigation-expand-more"
+          className="rojo"
           />
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
